@@ -38,7 +38,7 @@ jobs:
 
       # 👇 关键：先构建所有包（生成 dist/）
       - name: Build Packages
-        run: pnpm run build
+        run: pnpm run build:all
 
       # START：release PR 模式： 先提 PR → 人工合并 → 自动发布
       # # 👇 使用 Changesets 自动发布
