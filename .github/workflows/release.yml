@@ -46,7 +46,7 @@ jobs:
           commit: 'chore(release): publish packages'
           title: 'chore(release): publish packages'
         env:
-          # GitHub ci-publish-holyer-lib 的令牌，用于推送代码
-          GITHUB_TOKEN: ${{ secrets.ci-publish-holyer-lib }}
+          # GitHub CI_GITHUB_TOKEN，用于创建发布 PR 或直接发布
+          GITHUB_TOKEN: ${{ secrets.CI_GITHUB_TOKEN }}
           # NPM 令牌，用于发布到 npmjs.com， 定期更新
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
