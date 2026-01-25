@@ -1,10 +1,10 @@
 {
   "name": "@holyer-lib/title",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "A title component for Vue2",
-  "main": "dist/button.cjs.js",
-  "module": "dist/button.esm.js",
-  "unpkg": "dist/button.umd.js",
+  "main": "dist/title.cjs.js",
+  "module": "dist/title.esm.js",
+  "unpkg": "dist/title.umd.js",
   "files": ["dist", "README.md"],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

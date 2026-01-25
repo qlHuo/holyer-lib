@@ -16,8 +16,10 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0 # 必须！用于获取完整 Git 历史
-          token: ${{ secrets.CI_GITHUB_TOKEN }}  # 👈 关键！注入你的 PAT
+          # 必须！用于获取完整 Git 历史
+          fetch-depth: 0 
+          # 👈 关键！注入你的 PAT 用于推送 commit
+          token: ${{ secrets.CI_GITHUB_TOKEN }} 
 
       - name: Setup PNPM
         uses: pnpm/action-setup@v3
@@ -38,16 +40,45 @@ jobs:
       - name: Build Packages
         run: pnpm run build
 
-      # 👇 使用 Changesets 自动发布
-      - name: Create Release Pull Request or Publish
-        id: changesets
-        uses: changesets/action@v1
-        with:
-          publish: pnpm run release
-          commit: 'chore(release): publish packages'
-          title: 'chore(release): publish packages'
+      # START：release PR 模式： 先提 PR → 人工合并 → 自动发布
+      # # 👇 使用 Changesets 自动发布
+      # - name: Create Release Pull Request or Publish
+      #   id: changesets
+      #   uses: changesets/action@v1
+      #   with:
+      #     publish: pnpm run release
+      #     commit: 'chore(release): publish packages'
+      #     title: 'chore(release): publish packages'
+      #   env:
+      #     # 用于 GitHub Releases API
+      #     GITHUB_TOKEN: ${{ secrets.CI_GITHUB_TOKEN }}  
+      #     # NPM 令牌，用于发布到 npmjs.com， 定期更新
+      #     NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      # END：release PR 模式： 先提 PR → 人工合并 → 自动发布
+
+      # START: 全自动发布模式：有 changeset 则发布，无则跳过
+      # 👇 关键：检测是否有未处理的 changeset
+      - name: Check for changesets
+        id: check_changesets
+        run: |
+          if [ -d ".changeset" ] && [ "$(ls -A .changeset/*.md 2>/dev/null)" ]; then
+            echo "has_changesets=true" >> $GITHUB_OUTPUT
+          else
+            echo "has_changesets=false" >> $GITHUB_OUTPUT
+          fi
+      
+      # 👇 根据检测结果决定是否发布
+      # 1. 配置 .changeset/config.json 启用自动提交(commit: true)
+      # 2. 运行 changeset publish，它会：
+      #   2.1 自动运行 version
+      #   2.2 自动提交 package.json / CHANGELOG.md
+      #   2.3 自动删除 .changeset/*.md
+      #   2.4 自动 npm publish
+      - name: Publish packages
+        if: steps.check_changesets.outputs.has_changesets == 'true'
+        run: pnpm exec changeset publish
         env:
-          # 用于 GitHub Releases API
-          GITHUB_TOKEN: ${{ secrets.CI_GITHUB_TOKEN }}  
-          # NPM 令牌，用于发布到 npmjs.com， 定期更新
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.CI_GITHUB_TOKEN }}
+      
+      # END: 全自动发布模式：有 changeset 则发布，无则跳过  
