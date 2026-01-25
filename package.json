@@ -14,12 +14,14 @@
     "build:utils": "node scripts/build-utils.js",
     "prepublishOnly": "pnpm run build",
     "release": "changeset publish",
-    "version": "changeset version"
+    "version": "changeset version",
+    "prepare": "husky"
   },
   "devDependencies": {
     "@changesets/cli": "^2.29.8",
     "@rollup/plugin-commonjs": "^21.1.0",
     "@rollup/plugin-node-resolve": "^13.3.0",
+    "husky": "^9.1.7",
     "less": "^4.5.1",
     "rollup": "^2.79.2",
     "rollup-plugin-less": "^1.1.3",
