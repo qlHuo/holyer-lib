@@ -66,6 +66,12 @@ jobs:
           else
             echo "has_changesets=false" >> $GITHUB_OUTPUT
           fi
+
+      - name: Configure Git User
+        if: steps.check_changesets.outputs.has_changesets == 'true'
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
       
       # 👇 根据检测结果决定是否发布
       # 1. 配置 .changeset/config.json 启用自动提交(commit: true)
