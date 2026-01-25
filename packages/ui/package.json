@@ -1,0 +1,17 @@
+{
+  "name": "@holyer-lib/ui",
+  "version": "1.0.0",
+  "main": "dist/ui.cjs.js",
+  "module": "dist/ui.esm.js",
+  "unpkg": "dist/ui.umd.js",
+  "files": ["dist"],
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@holyer-lib/title": "workspace:*"
+  },
+  "peerDependencies": {
+    "vue": "2.6.14"
+  }
+}
