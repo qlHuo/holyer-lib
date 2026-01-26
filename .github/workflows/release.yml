@@ -40,6 +40,17 @@ jobs:
       - name: Build Packages
         run: pnpm run build:all
 
+
+      - name: Debug Changesets
+        run: |
+          echo "=== .changeset content ==="
+          ls -la .changeset/
+          cat .changeset/*.md
+          echo "=== config.json ==="
+          cat .changeset/config.json
+          echo "=== package versions ==="
+          grep version packages/*/package.json
+
       # START：release PR 模式： 先提 PR → 人工合并 → 自动发布
       # # 👇 使用 Changesets 自动发布
       # - name: Create Release Pull Request or Publish
@@ -86,5 +97,6 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.CI_GITHUB_TOKEN }}
+          NPM_TOKEN:  $ {{ secrets.NPM_TOKEN }}
       
       # END: 全自动发布模式：有 changeset 则发布，无则跳过  
