@@ -37,7 +37,7 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Install Dependencies
-        run: pnpm install
+        run: pnpm install --frozen-lockfile
 
       # # 构建产物（dist/）应在 .gitignore 中，避免污染工作区 changeset version 之后build
       # - name: Build Packages
@@ -72,6 +72,16 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+
+      - name: Debug Git Status Before Version
+        if: steps.check_changesets.outputs.has_changesets == 'true'
+        run: |
+          if [ -n " $ (git status --porcelain)" ]; then
+            echo "❌ Working directory is dirty before changeset version:"
+            git status --porcelain
+            exit 1
+          fi
 
       - name: Publish packages
         if: steps.check_changesets.outputs.has_changesets == 'true'
