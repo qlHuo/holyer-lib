@@ -39,9 +39,9 @@ jobs:
       - name: Install Dependencies
         run: pnpm install
 
-      # 构建产物（dist/）应在 .gitignore 中，避免污染工作区
-      - name: Build Packages
-        run: pnpm run build:all
+      # # 构建产物（dist/）应在 .gitignore 中，避免污染工作区 changeset version 之后build
+      # - name: Build Packages
+      #   run: pnpm run build:all
 
       # 调试：查看当前 changeset 状态（仅用于诊断）
       - name: Debug Changesets (Before)
