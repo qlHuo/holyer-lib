@@ -72,7 +72,7 @@ jobs:
       - name: Check for changesets
         id: check_changesets
         run: |
-          if [ -d ".changeset" ] && [ "$(ls -A .changeset/*.md 2>/dev/null)" ]; then
+          if ls .changeset/*.md >/dev/null 2>&1; then
             echo "has_changesets=true" >> $GITHUB_OUTPUT
           else
             echo "has_changesets=false" >> $GITHUB_OUTPUT
