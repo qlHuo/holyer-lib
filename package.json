@@ -15,7 +15,6 @@
     "build:utils": "node scripts/build-utils.js",
     "prepublishOnly": "pnpm run build",
     "release": "changeset publish",
-    "version": "changeset version",
     "prepare": "husky"
   },
   "devDependencies": {
