@@ -77,7 +77,7 @@ jobs:
       - name: Debug Git Status Before Version
         if: steps.check_changesets.outputs.has_changesets == 'true'
         run: |
-          if [ -n " $ (git status --porcelain)" ]; then
+          if [ -n " $(git status --porcelain)" ]; then
             echo "❌ Working directory is dirty before changeset version:"
             git status --porcelain
             exit 1
