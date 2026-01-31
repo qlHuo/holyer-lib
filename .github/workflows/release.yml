@@ -79,8 +79,9 @@ jobs:
           # 2. 用新版本构建（可选但推荐）
           pnpm run build:all
           # 3. 添加到暂存区并提交
-          git add .                      
-          git commit -m "chore(release): version packages"  
+          git add .                   
+          # lint-staged 会阻止 CI 提交，这里跳过钩子
+          git commit --no-verify  -m "chore(release): version packages"  
           # 4. 推送 changelog commit + tags
           git push origin main --follow-tags 
           # 5. 发布到 npm
