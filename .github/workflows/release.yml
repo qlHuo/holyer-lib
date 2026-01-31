@@ -43,19 +43,6 @@ jobs:
       # - name: Build Packages
       #   run: pnpm run build:all
 
-      # 调试：查看当前 changeset 状态（仅用于诊断）
-      - name: Debug Changesets (Before)
-        run: |
-          echo "=== .changeset content ==="
-          ls -la .changeset/
-          if ls .changeset/*.md >/dev/null 2>&1; then
-            cat .changeset/*.md
-          fi
-          echo "=== config.json ==="
-          cat .changeset/config.json
-          echo "=== package versions ==="
-          grep '"version"' packages/*/package.json
-
       # 检测是否存在未处理的 changeset
       - name: Check for changesets
         id: check_changesets
@@ -73,8 +60,8 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
-
-      - name: Debug Git Status Before Version
+      # 工作区干净检查
+      - name: Ensure clean working directory before versioning
         if: steps.check_changesets.outputs.has_changesets == 'true'
         run: |
           if [ -n "$(git status --porcelain)" ]; then
@@ -83,30 +70,22 @@ jobs:
             exit 1
           fi
 
+      # 发布包
       - name: Publish packages
         if: steps.check_changesets.outputs.has_changesets == 'true'
         run: |
-          # 1. Bump versions, update CHANGELOGs, commit, and delete changeset files
-          pnpm exec changeset version
-
-          # 2. Rebuild with new package.json versions (critical for correct dist metadata)
+          # 1. 生成 changelog + 升级版本
+          pnpm exec changeset version  
+          # 2. 用新版本构建（可选但推荐）
           pnpm run build:all
-
-          # 3. Push the version commit and Git tags to GitHub
-          git push origin main --follow-tags
-
-          # 4. Publish updated packages to npm
-          pnpm exec changeset publish
+          # 3. 添加到暂存区并提交
+          git add .                      
+          git commit -m "chore(release): version packages"  
+          # 4. 推送 changelog commit + tags
+          git push origin main --follow-tags 
+          # 5. 发布到 npm
+          pnpm exec changeset publish       
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.CI_GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-
-      # 可选：发布后调试（便于排查问题）
-      - name: Debug Changesets (After)
-        if: always() && steps.check_changesets.outputs.has_changesets == 'true'
-        run: |
-          echo "=== Final package versions ==="
-          grep '"version"' packages/*/package.json
-          echo "=== .changeset directory after publish ==="
-          ls -la .changeset/

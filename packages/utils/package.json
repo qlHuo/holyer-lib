@@ -1,6 +1,6 @@
 {
   "name": "@holyer-lib/utils",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "",
   "main": "dist/utils.cjs.js",
   "module": "dist/utils.esm.js",
