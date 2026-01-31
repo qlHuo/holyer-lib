@@ -1,11 +1,14 @@
 {
   "name": "@holyer-lib/title",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "A title component for Vue2",
   "main": "dist/title.cjs.js",
   "module": "dist/title.esm.js",
   "unpkg": "dist/title.umd.js",
-  "files": ["dist", "README.md"],
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

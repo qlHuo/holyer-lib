@@ -1,11 +1,14 @@
 {
   "name": "@holyer-lib/utils",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "",
   "main": "dist/utils.cjs.js",
   "module": "dist/utils.esm.js",
   "unpkg": "dist/utils.umd.js",
-  "files": ["dist", "README.md"],
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "publishConfig": {
     "access": "public"
   },
