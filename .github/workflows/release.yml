@@ -21,6 +21,7 @@ jobs:
           # 使用具有写权限的 PAT，用于推送 commit 和 tags
           token: ${{ secrets.CI_GITHUB_TOKEN }}
 
+      # 设置 PNPM 和 Node.js 环境 注意和开发环境版本保持一致，否则可能导致依赖问题
       - name: Setup PNPM
         uses: pnpm/action-setup@v3
         with:
@@ -70,7 +71,23 @@ jobs:
             exit 1
           fi
 
-      # 发布包
+      # START：release PR 模式： changeset自动提 PR → 人工合并 → 自动发布
+      # # 👇 使用 Changesets 自动发布
+      # - name: Create Release Pull Request or Publish
+      #   id: changesets
+      #   uses: changesets/action@v1
+      #   with:
+      #     publish: pnpm run release
+      #     commit: 'chore(release): publish packages'
+      #     title: 'chore(release): publish packages'
+      #   env:
+      #     # 用于 GitHub Releases API
+      #     GITHUB_TOKEN: ${{ secrets.CI_GITHUB_TOKEN }}  
+      #     # NPM 令牌，用于发布到 npmjs.com， 定期更新
+      #     NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      # END：release PR 模式： changeset自动提 PR → 人工合并 → 自动发布
+
+      # 全自动发布 （生成 changelog、版本升级、构建、提交、推送、发布）
       - name: Publish packages
         if: steps.check_changesets.outputs.has_changesets == 'true'
         run: |
