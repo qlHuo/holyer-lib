@@ -8,11 +8,10 @@ holyer-lib
 ├─ docs
 │  ├─ changset.md
 │  └─ image.png
-
 ├─ packages                # 核心组件库目录
-│  ├─ styles
-│  ├─ ui
-│  └─ utils
+│  ├─ styles               # 基础样式库
+│  ├─ ui                   # ui 组件库（通过rollup打包）
+│  └─ utils                # utils 工具库（通过rollup打包）
 ├─ scripts                 # 打包&构建脚本
 │   ├─ build-ui.js
 │   ├─ build-utils.js
