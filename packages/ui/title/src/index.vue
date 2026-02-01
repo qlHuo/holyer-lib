@@ -1,10 +1,11 @@
 <template>
   <div class="hi-title">
-    {{ content }}
+    <slot>{{ content }}</slot>
   </div>
 </template>
 
 <script>
+import './index.less';
 export default {
   name: 'HiTitle',
   props: {
@@ -13,13 +14,8 @@ export default {
       default: '标题'
     }
   },
-  data() {}
+  data() {
+    return {};
+  }
 };
 </script>
-
-<style scoped>
-.title {
-  text-align: center;
-  margin: 20px 0;
-}
-</style>

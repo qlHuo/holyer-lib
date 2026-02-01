@@ -90,6 +90,14 @@ holyer-lib
 2. 安装 @holyer-lib/title 到 @holyer-lib/ui
    pnpm add @holyer-lib/title@workspace:* -F @holyer-lib/ui
 
+| 场景 | 命令 |
+|------|------|
+| 在子包目录内添加本地包 | `pnpm add @myorg/utils` |
+| 在根目录为某子包添加本地包 | `pnpm add @myorg/utils -F @myorg/ui` |
+| 添加的是 外部 npm 包（非 workspace） | `pnpm add lodash` → 会正常安装最新版 |
+| 强制指定版本（不推荐用于本地包） | `pnpm add @myorg/utils@1.0.0` → 会去 npm 装，不是软链接！ |
+
+
 
 ### changeset用法详解
 

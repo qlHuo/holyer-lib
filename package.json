@@ -42,5 +42,8 @@
       "postcss@<7.0.36 || <8.4.31": "^8.4.38",
       "rollup@<2.79.2": "^2.79.2"
     }
+  },
+  "dependencies": {
+    "@holyer-lib/styles": "^0.0.6"
   }
 }
