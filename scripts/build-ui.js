@@ -18,7 +18,7 @@ async function buildComponents() {
     if (!fs.existsSync(pkgPath)) continue;
 
     const pkg = JSON.parse(fs.readFileSync(pkgPath, 'utf8'));
-    const input = path.join(compPath, 'src/index.vue');
+    const input = path.join(compPath, 'index.js');
     const name = pkg.name.split('/').pop(); // e.g., "button"
 
     console.log(`Building ${name}...`);
