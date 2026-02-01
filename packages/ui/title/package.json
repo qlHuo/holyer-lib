@@ -1,6 +1,6 @@
 {
   "name": "@holyer-lib/title",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A title component for Vue2",
   "main": "dist/title.cjs.js",
   "module": "dist/title.esm.js",

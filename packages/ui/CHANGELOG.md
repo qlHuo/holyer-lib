@@ -1,5 +1,12 @@
 # @holyer-lib/ui
 
+## 0.0.8
+
+### Patch Changes
+
+- Updated dependencies [e5fe75a]
+  - @holyer-lib/title@1.0.1
+
 ## 0.0.7
 
 ### Patch Changes

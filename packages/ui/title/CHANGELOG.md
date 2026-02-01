@@ -1,5 +1,11 @@
 # @holyer-lib/title
 
+## 1.0.1
+
+### Patch Changes
+
+- e5fe75a: chore: UI 组件打包配置
+
 ## 1.0.0
 
 ### Major Changes
