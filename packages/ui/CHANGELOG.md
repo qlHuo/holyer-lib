@@ -1,5 +1,12 @@
 # @holyer-lib/ui
 
+## 0.0.7
+
+### Patch Changes
+
+- Updated dependencies [2468cfd]
+  - @holyer-lib/title@1.0.0
+
 ## 0.0.6
 
 ### Patch Changes
