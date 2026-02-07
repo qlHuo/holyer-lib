@@ -1,0 +1,27 @@
+{
+  // 🔑 关键：关闭直接格式化
+  "editor.formatOnSave": false,
+
+  // 🔑 关键：保存时让 ESLint 修复所有问题（含 Prettier）
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+
+  // 指定文件类型使用 ESLint 作为格式化器
+  "[vue]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+
+  // 确保 Prettier 插件尊重项目配置（即使不直接用它）
+  "prettier.configPath": ".prettierrc",
+  "prettier.requireConfig": true,
+  "eslint.validate": ["javascript", "vue"],
+  // 关闭 Vetur 的模版类型检查，不修复类型本身。彻底禁用模板插值的 TS 类型检查
+  "vetur.experimental.templateInterpolationService": false
+}

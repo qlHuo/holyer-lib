@@ -1,0 +1,31 @@
+// jsconfig.json 主要用来支持 路径别名跳转 和 明确项目范围。
+{
+  "compilerOptions": {
+    "target": "es2016",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+
+    // 关键：保持关闭类型检查（避免意外激活）
+    "checkJs": false,
+
+    // 允许 JS 文件被识别
+    "allowJs": true,
+
+    // 路径别名（可选但推荐）
+    "baseUrl": ".",
+    "paths": {
+      "@holyer-lib/*": ["packages/*"]
+    }
+  },
+  "include": [
+    "packages/**/*",
+    "example/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "**/dist"
+  ]
+}

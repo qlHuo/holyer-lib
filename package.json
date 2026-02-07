@@ -15,13 +15,22 @@
     "build:utils": "node scripts/build-utils.js",
     "prepublishOnly": "pnpm run build",
     "release": "changeset publish",
-    "prepare": "husky"
+    "prepare": "husky",
+    "lint": "eslint packages --ext .js,.vue",
+    "lint:fix": "eslint packages --ext .js,.vue --fix"
   },
   "devDependencies": {
     "@changesets/changelog-git": "^0.2.1",
     "@changesets/cli": "^2.29.8",
     "@rollup/plugin-commonjs": "^21.1.0",
     "@rollup/plugin-node-resolve": "^13.3.0",
+    "@babel/eslint-parser": "^7.12.16",
+    "@vue/cli-plugin-eslint": "~5.0.0",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-vue": "^8.0.3",
+    "prettier": "^2.4.1",
     "husky": "^9.1.7",
     "less": "^4.5.1",
     "rollup": "^2.79.2",
@@ -42,8 +51,5 @@
       "postcss@<7.0.36 || <8.4.31": "^8.4.38",
       "rollup@<2.79.2": "^2.79.2"
     }
-  },
-  "dependencies": {
-    "@holyer-lib/styles": "^0.0.6"
   }
 }
