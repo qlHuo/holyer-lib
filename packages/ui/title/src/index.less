@@ -1,7 +1,47 @@
 .hi-title {
-  font-size: 24px;
-  font-weight: bold;
-  margin: 16px 0;
-  border-left: 4px solid var(--td-brand-color);
-  padding-left: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  &--small {
+    gap: 2px;
+  }
+  &--large {
+    gap: 6px;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  &__prefix {
+    flex-shrink: 0; 
+    display: flex; 
+    align-items: center;
+  }
+
+  &__bar {
+    width: 4px;
+    background-color: var(--td-brand-color);
+    flex-shrink: 0;
+  }
+
+  &__icon {
+    flex-shrink: 0;
+    line-height: 1;
+  }
+
+  &__text {
+    margin: 0;
+    font-weight: 600;
+    color: var(--td-text-color-primary);
+  }
+
+  &__description {
+    margin: 0;
+    font-size: 12px;
+    color: var(--td-text-color-secondary);
+  }
 }

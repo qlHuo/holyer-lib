@@ -4,7 +4,7 @@ import HiTitle from './src/index.vue';
 HiTitle.name = 'HiTitle';
 
 // 添加 install
-HiTitle.install = (Vue) => {
+HiTitle.install = Vue => {
   Vue.component(HiTitle.name, HiTitle);
 };
 

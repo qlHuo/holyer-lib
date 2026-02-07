@@ -3,9 +3,7 @@
  */
 export function hasClass(el, cls) {
   if (!el || !cls) return false;
-  return el.classList
-    ? el.classList.contains(cls)
-    : (' ' + el.className + ' ').indexOf(' ' + cls + ' ') > -1;
+  return el.classList ? el.classList.contains(cls) : (' ' + el.className + ' ').indexOf(' ' + cls + ' ') > -1;
 }
 
 export function addClass(el, cls) {
@@ -22,10 +20,7 @@ export function removeClass(el, cls) {
   if (el.classList) {
     el.classList.remove(cls);
   } else {
-    el.className = el.className.replace(
-      new RegExp('(^|\\b)' + cls.split(' ').join('|') + '(\\b|$)', 'gi'),
-      ' '
-    );
+    el.className = el.className.replace(new RegExp('(^|\\b)' + cls.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
   }
 }
 
