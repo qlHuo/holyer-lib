@@ -1,5 +1,11 @@
 # @holyer-lib/title
 
+## 1.0.2
+
+### Patch Changes
+
+- 6bab85d: refactor: title 组件重构、styles 包同步 tdesign 样式、ui 与 utils eslint fix
+
 ## 1.0.1
 
 ### Patch Changes

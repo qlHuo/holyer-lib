@@ -1,4 +1,4 @@
-import HiTitle from './title';
+import HiTitle from './title'
 
 const components = [HiTitle];
 

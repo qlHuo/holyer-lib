@@ -1,5 +1,13 @@
 # @holyer-lib/ui
 
+## 0.0.9
+
+### Patch Changes
+
+- 6bab85d: refactor: title 组件重构、styles 包同步 tdesign 样式、ui 与 utils eslint fix
+- Updated dependencies [6bab85d]
+  - @holyer-lib/title@1.0.2
+
 ## 0.0.8
 
 ### Patch Changes
