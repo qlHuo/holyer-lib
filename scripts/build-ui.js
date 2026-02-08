@@ -25,7 +25,7 @@ async function buildComponents() {
 
     // 创建配置
     const config = createConfig({ input, name });
-    
+
     // 创建 bundle
     const bundle = await rollup.rollup({
       input: config.input,
@@ -51,13 +51,14 @@ function generateIndexJs() {
     return stat.isDirectory() && fs.existsSync(path.join(COMPONENTS_DIR, f, 'package.json'));
   });
 
-  const imports = dirs.map(d => `import ${capitalize(d)} from './${d}'`).join('\n');
-  const exports = dirs.map(d => capitalize(d)).join(', ');
-  const components = dirs.map(d => capitalize(d)).join(', ');
+  const imports = dirs.map(d => `import ${capitalize(d)} from './${d}';`).join('\n');
+  const exports = `${dirs.map(d => capitalize(d)).join(',\n  ')}`;
+  const components = `\n  ${dirs.map(d => capitalize(d)).join(',\n  ')}\n`;
 
   const content = `
 ${imports}
 
+// eslint-disable-next-line prettier/prettier
 const components = [${components}];
 
 const install = function (Vue) {
@@ -66,14 +67,26 @@ const install = function (Vue) {
   });
 };
 
-export default { install, ${exports} };
-`.trim();
+export default {
+  install,
+  ${exports}
+};
+`.trimStart();
 
   fs.writeFileSync(path.join(UI_DIR, 'index.js'), content);
 }
 
+/**
+ * @Description 命名转换，将骨节符命名转换为 PascalCase
+ * @Author holyer
+ * @Date 2026/02/08 15:29:32
+ *  -: 匹配连字符。
+ * ([a-z]): 捕获组，匹配任意一个小写字母，并将其存储在第一个捕获组中。
+ */
 function capitalize(str) {
-  return `Hi${str.charAt(0).toUpperCase() + str.slice(1)}`;
+  const camelCaseStr = str.replace(/-([a-z])/g, (match, p1) => p1.toUpperCase());
+  // 将字符串的首字母大写
+  return `Hi${camelCaseStr.charAt(0).toUpperCase() + camelCaseStr.slice(1)}`;
 }
 
 // 3. 全量 UI 构建
@@ -103,4 +116,3 @@ async function buildFullUi() {
   generateIndexJs(); // 可选：自动维护 index.js
   await buildFullUi();
 })();
-

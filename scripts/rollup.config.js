@@ -51,4 +51,4 @@ module.exports = function createConfig({ input, name, formats = ['esm', 'cjs', '
     // output 单独通过 outputs 字段返回
     outputs // 👈 关键：单独返回 output 数组
   };
-}
+};

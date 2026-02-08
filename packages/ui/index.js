@@ -1,6 +1,11 @@
+import HiExpandText from './expand-text';
 import HiTitle from './title';
 
-const components = [HiTitle];
+// eslint-disable-next-line prettier/prettier
+const components = [
+  HiExpandText,
+  HiTitle
+];
 
 const install = function (Vue) {
   components.forEach(component => {
@@ -8,4 +13,8 @@ const install = function (Vue) {
   });
 };
 
-export default { install, HiTitle };
+export default {
+  install,
+  HiExpandText,
+  HiTitle
+};

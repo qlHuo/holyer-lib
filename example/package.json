@@ -9,6 +9,7 @@
     "lint:fix": "vue-cli-service lint --fix"
   },
   "dependencies": {
+    "@holyer-lib/expand-text": "workspace:*",
     "@holyer-lib/styles": "workspace:*",
     "@holyer-lib/title": "workspace:*",
     "core-js": "^3.8.3",
