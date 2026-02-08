@@ -1,0 +1,37 @@
+.hi-expand-text {
+  display: flex;
+  width: 100%;
+  // 强制统一行高
+  line-height: 1.5;
+  &--content {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-word;
+    -webkit-line-clamp: var(--hi-expand-text-line-clamp);
+    line-clamp: var(--hi-expand-text-line-clamp);
+
+    &.hi-expand-text--content__show-toggle::before {
+      content: '';
+      float: right;
+      height: 100%;
+      margin-bottom: calc(-1em * 1.5);
+    }
+
+    // 展开时显示全部内容
+    &__expanded {
+      display: block;
+      overflow: visible;
+      -webkit-line-clamp: unset;
+      line-clamp: unset;
+    }
+  }
+  // 是否显示切换按钮
+  &--toggle {
+    color: var(--td-brand-color);
+    float: right;
+    clear: both;
+    cursor: pointer;
+  }
+}
