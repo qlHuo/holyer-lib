@@ -1,5 +1,11 @@
 # @holyer-lib/ui
 
+## 0.0.10
+
+### Patch Changes
+
+- b5b7e3c: feat: ui 包打包 expand-text 组件
+
 ## 0.0.9
 
 ### Patch Changes
