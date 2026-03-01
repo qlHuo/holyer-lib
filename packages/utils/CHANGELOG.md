@@ -1,5 +1,11 @@
 # @holyer-lib/utils
 
+## 0.0.8
+
+### Patch Changes
+
+- 894d3b3: feat: virtual-list 组件初版；ui 包同步升级；utils 组件升级
+
 ## 0.0.7
 
 ### Patch Changes
