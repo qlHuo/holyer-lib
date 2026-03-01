@@ -46,3 +46,29 @@ export function uuid() {
     return v.toString(16);
   });
 }
+
+/**
+ * 将数值或字符串转换为合法的 CSS 长度值（用于 style 绑定）
+ * - 若为 number，自动追加 'px' 单位
+ * - 若为 string，原样返回（假定用户已提供合法 CSS 长度值）
+ * @param {number|string} value - 输入值（如 100, '100%', '50vh', 'auto'）
+ * @returns {string} 合法的 CSS 长度字符串 默认值为 0
+ * @example
+ * formatSize(100)        // '100px'
+ * formatSize('100%')     // '100%'
+ * formatSize('50vh')     // '50vh'
+ * formatSize(null)       // 0
+ * formatSize(undefined)  // 0
+ */
+export function formatSize(value) {
+  if (typeof value === 'number') {
+    return `${value}px`;
+  }
+  if (typeof value === 'string') {
+    if (value.trim() === '') {
+      return 0;
+    }
+    return value;
+  }
+  return 0;
+}

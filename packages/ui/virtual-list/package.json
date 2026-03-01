@@ -1,0 +1,28 @@
+{
+  "name": "@holyer-lib/virtual-list",
+  "version": "0.0.1",
+  "description": "A virtual-list component for Vue2",
+  "main": "dist/virtual-list.cjs.js",
+  "module": "dist/virtual-list.esm.js",
+  "unpkg": "dist/virtual-list.umd.js",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "holyer",
+  "license": "ISC",
+  "packageManager": "pnpm@10.15.0",
+  "publishConfig": {
+    "access": "public"
+  },
+  "peerDependencies": {
+    "vue": "2.6.14"
+  },
+  "dependencies": {
+    "@holyer-lib/utils": "workspace:*"
+  }
+}

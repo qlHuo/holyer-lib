@@ -21,6 +21,25 @@
         laborum.
       </div>
     </HiExpandText>
+
+    <HiTitle class="mt-16 mb-16" content="03. virtual-list组件" />
+    <div class="flex-middle">
+      <button @click="handleScrollTop">滚动到顶部</button>
+      <button class="ml-8 mr-8" @click="handleScrollBottom">滚动到底部</button>
+      <button @click="handleScrollTo8888">滚动到8888项</button>
+    </div>
+    <HiVirtualList
+      ref="virtualListRef"
+      class="mt-16 virtual-list-demo"
+      :items="Array.from({ length: 100000 }, (_, i) => ({ id: i, text: `Item ${i}` }))"
+      :item-height="30"
+      :buffer="20"
+      height="300px"
+    >
+      <template #default="{ item, index }">
+        <div class="list-item">{{ index }} - {{ item.text }}</div>
+      </template>
+    </HiVirtualList>
   </div>
 </template>
 
@@ -36,9 +55,37 @@ export default {
   methods: {
     handleToggle(type) {
       console.log('toggle', type);
+    },
+
+    handleScrollTop() {
+      if (this.$refs.virtualListRef) {
+        this.$refs.virtualListRef.scrollToTop();
+      }
+    },
+
+    handleScrollBottom() {
+      if (this.$refs.virtualListRef) {
+        this.$refs.virtualListRef.scrollToBottom();
+      }
+    },
+
+    handleScrollTo8888() {
+      if (this.$refs.virtualListRef) {
+        this.$refs.virtualListRef.scrollTo(8888);
+      }
     }
   }
 };
 </script>
 
-<style lang="less" scoped></style>
+<style lang="less" scoped>
+.virtual-list-demo {
+  border: 1px solid #ccc;
+  .list-item {
+    height: 30px;
+    line-height: 30px;
+    padding: 0 10px;
+    border-bottom: 1px solid #eee;
+  }
+}
+</style>

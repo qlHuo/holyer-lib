@@ -1,0 +1,14 @@
+.hi-virtual-list {
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: relative;
+  will-change: scroll-position;
+
+  &--placeholder {
+    pointer-events: none;
+  }
+
+  &--item-wrapper {
+    box-sizing: border-box;
+  }
+}

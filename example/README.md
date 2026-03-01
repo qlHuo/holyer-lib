@@ -167,8 +167,8 @@
   1. 安装组件依赖
     ```bash
       cd example
-      # -w / --workspace 是关键！它告诉 pnpm：“这个包来自 workspace，请用 workspace:* 协议链接，不要去 npm 下载”
-      pnpm add @holyer-lib/title -w 
+      # 它告诉 pnpm：“这个包来自 workspace，请用 workspace:* 协议链接，不要去 npm 下载”
+      pnpm add @holyer-lib/title@workspace:*
     ```
 
   2. 组件打包

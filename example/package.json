@@ -12,6 +12,7 @@
     "@holyer-lib/expand-text": "workspace:*",
     "@holyer-lib/styles": "workspace:*",
     "@holyer-lib/title": "workspace:*",
+    "@holyer-lib/virtual-list": "workspace:*",
     "core-js": "^3.8.3",
     "vue": "^2.6.14",
     "vue-router": "^3.5.1"
