@@ -1,0 +1,13 @@
+{
+  "name": "@holyer-lib/template",
+  "version": "1.0.0",
+  "main": "dist/template.cjs.js",
+  "module": "dist/template.esm.js",
+  "unpkg": "dist/template.umd.js",
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
+}
