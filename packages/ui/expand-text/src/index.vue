@@ -10,8 +10,6 @@
 </template>
 
 <script>
-import './index.less';
-
 export default {
   name: 'HiExpandText',
   props: {
@@ -150,3 +148,7 @@ export default {
   }
 };
 </script>
+
+<style lang="less" scoped>
+@import './index.less';
+</style>

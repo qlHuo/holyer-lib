@@ -19,7 +19,6 @@
 </template>
 
 <script>
-import './index.less';
 import { formatSize } from '@holyer-lib/utils';
 
 export default {
@@ -247,3 +246,7 @@ export default {
   }
 };
 </script>
+
+<style lang="less" scoped>
+@import './index.less';
+</style>

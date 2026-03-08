@@ -26,7 +26,7 @@ async function buildUtils() {
       process.env.NODE_ENV === 'production' && terser()
     ].filter(Boolean),
     // utils 是纯 JS，无需 external，但若未来引用其他包可加
-    external: [] 
+    external: []
   });
 
   // 输出多种格式

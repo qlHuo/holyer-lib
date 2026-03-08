@@ -38,7 +38,6 @@
 </template>
 
 <script>
-import './index.less';
 import { formatSize } from '@holyer-lib/utils';
 
 const validateSize = val => {
@@ -302,3 +301,7 @@ export default {
   }
 };
 </script>
+
+<style lang="less" scoped>
+@import './index.less';
+</style>

@@ -31,7 +31,6 @@
 </template>
 
 <script>
-import './index.less';
 const TITILE_SIZE_MAP = {
   small: '14px',
   medium: '16px',
@@ -116,3 +115,7 @@ export default {
   }
 };
 </script>
+
+<style lang="less" scoped>
+@import './index.less';
+</style>
