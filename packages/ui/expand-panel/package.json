@@ -1,6 +1,6 @@
 {
   "name": "@holyer-lib/expand-panel",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "main": "dist/expand-panel.cjs.js",
   "module": "dist/expand-panel.esm.js",
   "unpkg": "dist/expand-panel.umd.js",

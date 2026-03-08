@@ -1,5 +1,12 @@
 # example
 
+## 0.1.3
+
+### Patch Changes
+
+- Updated dependencies [124f9ca]
+  - @holyer-lib/expand-panel@1.0.0
+
 ## 0.1.2
 
 ### Patch Changes
