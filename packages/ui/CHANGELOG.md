@@ -1,5 +1,11 @@
 # @holyer-lib/ui
 
+## 0.2.0
+
+### Minor Changes
+
+- 669d6b4: 'feat: set ui version@0.2.0'
+
 ## 0.1.0
 
 ### Minor Changes
