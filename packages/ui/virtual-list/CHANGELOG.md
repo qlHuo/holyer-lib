@@ -1,5 +1,11 @@
 # @holyer-lib/virtual-list
 
+## 0.0.3
+
+### Patch Changes
+
+- edca2e3: styles: 组件样式引入调整
+
 ## 0.0.2
 
 ### Patch Changes

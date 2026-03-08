@@ -1,5 +1,12 @@
 # example
 
+## 0.1.4
+
+### Patch Changes
+
+- Updated dependencies [edca2e3]
+  - @holyer-lib/ui@0.2.1
+
 ## 0.1.3
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @holyer-lib/expand-panel
 
+## 1.0.1
+
+### Patch Changes
+
+- edca2e3: styles: 组件样式引入调整
+
 ## 1.0.0
 
 ### Major Changes
