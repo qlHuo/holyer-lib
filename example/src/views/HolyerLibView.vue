@@ -40,6 +40,42 @@
         <div class="list-item">{{ index }} - {{ item.text }}</div>
       </template>
     </HiVirtualList>
+
+    <HiTitle class="mt-16 mb-16" content="04. expand-panel组件" />
+
+    <!-- <div style="margin-bottom: 24px; display: flex; flex-direction: column; height: 800px; border: 1px solid #ccc">
+      <div style="display: flex; flex: 1">主内容区</div>
+      <HiExpandPanel :placement="'top'">底部面板内容</HiExpandPanel>
+    </div> -->
+
+    <!-- <div style="margin-bottom: 24px; display: flex; flex-direction: column; height: 800px; border: 1px solid #ccc">
+      <HiExpandPanel :placement="'bottom'">上部面板内容</HiExpandPanel>
+      <div style="display: flex; flex: 1">主内容区</div>
+    </div> -->
+
+    <!-- <div style="margin-bottom: 24px; display: flex; flex-direction: row; height: 800px; border: 1px solid #ccc">
+      <div style="display: flex; flex: 1">主内容区</div>
+      <HiExpandPanel :placement="'left'">右侧面板内容</HiExpandPanel>
+    </div> -->
+
+    <button class="mb-16" @click="handleExpandPanel">toggle-expand</button>
+    <div style="margin-bottom: 24px; display: flex; flex-direction: row; height: 500px; border: 1px solid #ccc">
+      <HiExpandPanel
+        :expanded.sync="expanded"
+        :placement="'right'"
+        :draggable="true"
+        :showTrigger="true"
+        size="200"
+        minSize="30%"
+        maxSize="50%"
+        cacheKey="right-panel-cache-key"
+        @expand-change="handleExpandChange"
+        @drag-end="handleDragEnd"
+      >
+        左侧面板内容
+      </HiExpandPanel>
+      <div style="display: flex; flex: 1">主内容区</div>
+    </div>
   </div>
 </template>
 
@@ -48,8 +84,11 @@ export default {
   name: 'HolyerLibView',
   components: {},
   data() {
-    return {};
+    return {
+      expanded: true
+    };
   },
+
   created() {},
   mounted() {},
   methods: {
@@ -73,12 +112,30 @@ export default {
       if (this.$refs.virtualListRef) {
         this.$refs.virtualListRef.scrollTo(8888);
       }
+    },
+
+    handleExpandPanel() {
+      this.expanded = !this.expanded;
+    },
+
+    handleExpandChange(data) {
+      console.log('面板状态变化:', data);
+    },
+
+    handleDragEnd(data) {
+      console.log('拖拽结束，新的尺寸:', data);
     }
   }
 };
 </script>
 
 <style lang="less" scoped>
+.holyer-lib-view {
+  height: 100%;
+  width: 100%;
+  padding: 16px;
+  margin-bottom: 24px;
+}
 .virtual-list-demo {
   border: 1px solid #ccc;
   .list-item {

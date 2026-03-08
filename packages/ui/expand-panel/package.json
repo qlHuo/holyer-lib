@@ -1,0 +1,16 @@
+{
+  "name": "@holyer-lib/expand-panel",
+  "version": "0.0.1",
+  "main": "dist/expand-panel.cjs.js",
+  "module": "dist/expand-panel.esm.js",
+  "unpkg": "dist/expand-panel.umd.js",
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@holyer-lib/utils": "workspace:*"
+  }
+}

@@ -74,6 +74,9 @@ importers:
 
   example:
     dependencies:
+      '@holyer-lib/expand-panel':
+        specifier: workspace:*
+        version: link:../packages/ui/expand-panel
       '@holyer-lib/expand-text':
         specifier: workspace:*
         version: link:../packages/ui/expand-text
@@ -145,6 +148,12 @@ importers:
   packages/styles: {}
 
   packages/ui: {}
+
+  packages/ui/expand-panel:
+    dependencies:
+      '@holyer-lib/utils':
+        specifier: workspace:*
+        version: link:../../utils
 
   packages/ui/expand-text: {}
 
