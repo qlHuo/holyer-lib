@@ -44,12 +44,16 @@ async function buildComponents() {
   }
 }
 
+// TODO:: 不从package.json读取组件名，而是从各个子组件中的index.js中读取export对象的key，这样能保证同一个文件下有多个组件需要导出时就能正确导出，而不是只能导出一个组件（即package.json中的name字段只能对应一个组件）
 // 2. 自动生成 ui/index.js（可选）
+// eslint-disable-next-line no-unused-vars
 function generateIndexJs() {
   const dirs = fs.readdirSync(COMPONENTS_DIR).filter(f => {
     const stat = fs.statSync(path.join(COMPONENTS_DIR, f));
     return stat.isDirectory() && fs.existsSync(path.join(COMPONENTS_DIR, f, 'package.json'));
   });
+
+  console.log('Generating index.js for components:', dirs);
 
   const imports = dirs.map(d => `import ${capitalize(d)} from './${d}';`).join('\n');
   const exports = `${dirs.map(d => capitalize(d)).join(',\n  ')}`;
@@ -66,6 +70,9 @@ const install = function (Vue) {
     Vue.component(component.name, component);
   });
 };
+
+// eslint-disable-next-line prettier/prettier
+export {${components}};
 
 export default {
   install,
@@ -113,6 +120,6 @@ async function buildFullUi() {
 // 主流程
 (async () => {
   await buildComponents();
-  generateIndexJs(); // 可选：自动维护 index.js
+  // generateIndexJs(); // 可选：自动维护 index.js
   await buildFullUi();
 })();

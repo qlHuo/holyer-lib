@@ -143,6 +143,8 @@ importers:
 
   packages/ui: {}
 
+  packages/ui/card-list: {}
+
   packages/ui/expand-panel:
     dependencies:
       '@holyer-lib/utils':

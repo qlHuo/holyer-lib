@@ -8,4 +8,6 @@ HiTitle.install = Vue => {
   Vue.component(HiTitle.name, HiTitle);
 };
 
+export { HiTitle };
+
 export default HiTitle;

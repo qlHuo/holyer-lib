@@ -8,4 +8,6 @@ HiVirtualList.install = Vue => {
   Vue.component(HiVirtualList.name, HiVirtualList);
 };
 
+export { HiVirtualList };
+
 export default HiVirtualList;

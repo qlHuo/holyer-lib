@@ -76,6 +76,33 @@
       </HiExpandPanel>
       <div style="display: flex; flex: 1">主内容区</div>
     </div>
+
+    <HiTitle class="mt-16 mb-16" content="05. card-list组件" />
+    <HiCardList
+      :col="4"
+      :gutter="8"
+      :cardHeight="'100px'"
+      :borderRadius="2"
+      borderColor="#ccc"
+      item-class="card-item-custom"
+      :xl="6"
+      :lg="5"
+      :md="4"
+      :sm="3"
+      :xs="2"
+      :xxs="2"
+    >
+      <HiCardItem
+        :key="idx"
+        v-for="(item, idx) in Array.from({ length: 20 }).map((_, i) => ({
+          content: `卡片内容${i + 1}`
+        }))"
+        :actived="idx === selectedCardIndex"
+        @click="selectedCardIndex = idx"
+      >
+        <div slot="content">{{ item.content }}</div>
+      </HiCardItem>
+    </HiCardList>
   </div>
 </template>
 
@@ -85,7 +112,8 @@ export default {
   components: {},
   data() {
     return {
-      expanded: true
+      expanded: true,
+      selectedCardIndex: 0
     };
   },
 

@@ -7,4 +7,6 @@ HiExpandText.install = Vue => {
   Vue.component(HiExpandText.name, HiExpandText);
 };
 
+export { HiExpandText };
+
 export default HiExpandText;

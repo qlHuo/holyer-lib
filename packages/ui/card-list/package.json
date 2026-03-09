@@ -1,0 +1,13 @@
+{
+  "name": "@holyer-lib/card-list",
+  "version": "0.0.1",
+  "main": "dist/card-list.cjs.js",
+  "module": "dist/card-list.esm.js",
+  "unpkg": "dist/card-list.umd.js",
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
+}

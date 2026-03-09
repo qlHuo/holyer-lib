@@ -1,0 +1,32 @@
+.hi-card-list {
+  overflow: hidden;
+
+  &--content {
+    display: grid;
+    // 默认情况下，使用xxs的列数设置
+    grid-template-columns: repeat(var(--xxs-col-count), 1fr);
+    gap: var(--card-gutter);
+
+    /* 媒体查询 */
+    // xs: >= 768px
+    @media screen and (min-width: 768px) {
+      grid-template-columns: repeat(var(--xs-col-count), 1fr);
+    }
+    // sm: >= 960px
+    @media screen and (min-width: 960px) {
+      grid-template-columns: repeat(var(--sm-col-count), 1fr);
+    }
+    // md: >= 1280px
+    @media screen and (min-width: 1280px) {
+      grid-template-columns: repeat(var(--md-col-count), 1fr);
+    }
+    // lg: >= 1680px
+    @media screen and (min-width: 1680px) {
+      grid-template-columns: repeat(var(--lg-col-count), 1fr);
+    }
+    // xl: >= 1920px
+    @media screen and (min-width: 1920px) {
+      grid-template-columns: repeat(var(--xl-col-count), 1fr);
+    }
+  }
+}

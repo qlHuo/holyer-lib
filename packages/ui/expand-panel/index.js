@@ -7,4 +7,6 @@ HiExpandPanel.install = Vue => {
   Vue.component(HiExpandPanel.name, HiExpandPanel);
 };
 
+export { HiExpandPanel };
+
 export default HiExpandPanel;

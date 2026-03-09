@@ -1,0 +1,34 @@
+.hi-card-item {
+  width: 100%;
+  height: var(--card-height);
+  box-sizing: border-box;
+  border-radius: var(--card-border-radius);
+  border: 1px solid var(--card-border-color);
+  padding: var(--card-padding);
+  background-color: var(--td-bg-color-container);
+  
+  &--active {
+    border-color: var(--td-brand-color) !important;
+  }
+
+  &--header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    &_icon {
+      width: 32px;
+      height: 32px;
+      margin-right: 8px;
+    }
+    &_title {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--td-font-gray-1);
+    }
+  }
+
+  &--content {
+    width: 100%;
+    font-size: 14px;
+  }
+}

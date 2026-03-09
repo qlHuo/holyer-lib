@@ -11,14 +11,15 @@ module.exports = function createConfig({ input, name, formats = ['esm', 'cjs', '
   if (formats.includes('esm')) {
     outputs.push({
       file: `dist/${name}.esm.js`,
-      format: 'es'
+      format: 'es',
+      exports: 'named'
     });
   }
   if (formats.includes('cjs')) {
     outputs.push({
       file: `dist/${name}.cjs.js`,
       format: 'cjs',
-      exports: 'default' // 👈 关键：明确告诉 Rollup 这是 default-only 模块
+      exports: 'named' // 👈 关键：明确告诉 Rollup 这是 default-only 模块
     });
   }
   if (formats.includes('umd')) {
@@ -26,7 +27,8 @@ module.exports = function createConfig({ input, name, formats = ['esm', 'cjs', '
       file: `dist/${name}.umd.js`,
       format: 'umd',
       name: name.replace(/-/g, '_').replace(/\b\w/g, l => l.toUpperCase()), // 转为 PascalCase
-      globals: { vue: 'Vue' }
+      globals: { vue: 'Vue' },
+      exports: 'named'
     });
   }
 
