@@ -1,5 +1,11 @@
 # @holyer-lib/title
 
+## 1.0.4
+
+### Patch Changes
+
+- e1c8e3a: feat: card-list 组件发布 && ui 包和组件支持按需导入
+
 ## 1.0.3
 
 ### Patch Changes
