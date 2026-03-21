@@ -7,14 +7,7 @@ import { HiTitle } from './title';
 import { HiVirtualList } from './virtual-list';
 
 // eslint-disable-next-line prettier/prettier
-const components = [
-  HiCardList,
-  HiCardItem,
-  HiExpandPanel,
-  HiExpandText,
-  HiTitle,
-  HiVirtualList
-];
+const components = [HiCardList, HiCardItem, HiExpandPanel, HiExpandText, HiTitle, HiVirtualList];
 
 const install = function (Vue) {
   components.forEach(component => {
@@ -23,14 +16,7 @@ const install = function (Vue) {
 };
 
 // eslint-disable-next-line prettier/prettier
-export {
-  HiCardList,
-  HiCardItem,
-  HiExpandPanel,
-  HiExpandText,
-  HiTitle,
-  HiVirtualList
-};
+export { HiCardList, HiCardItem, HiExpandPanel, HiExpandText, HiTitle, HiVirtualList };
 
 export default {
   install,

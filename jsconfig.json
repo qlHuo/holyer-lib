@@ -17,15 +17,10 @@
     "baseUrl": ".",
     "paths": {
       "@holyer-lib/*": ["packages/*"]
-    }
+    },
+    // 禁止自动加载任何全局类型库（包括 minimatch、node 等）
+    "types": []
   },
-  "include": [
-    "packages/**/*",
-    "example/**/*"
-  ],
-  "exclude": [
-    "node_modules",
-    "dist",
-    "**/dist"
-  ]
+  "include": ["packages/**/*", "example/**/*", "docs/**/*"],
+  "exclude": ["node_modules", "node_modules/.pnpm", "**/node_modules/.pnpm", "dist", "**/dist"]
 }

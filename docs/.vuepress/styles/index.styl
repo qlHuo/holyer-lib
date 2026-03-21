@@ -1,0 +1,50 @@
+:root {
+  /* 同步 TDesign CSS 变量（关键！） */
+  --td-brand-color: #0052d9;
+  --td-brand-color-hover: #003fc9;
+  --td-brand-color-active: #0034a9;
+  --td-brand-color-disabled: #a5c3ff;
+  /* 补充常用衍生色（按需） */
+  --td-link-color: var(--td-brand-color);
+  --td-primary-btn-bg: var(--td-brand-color);
+}
+
+/* 覆盖 VuePress 默认主题关键样式 */
+.theme-default-content a {
+  color: var(--td-link-color) !important;
+}
+.nav-link.router-link-active,
+.sidebar-link.active {
+  color: var(--td-brand-color) !important;
+  border-left-color: var(--td-brand-color) !important;
+}
+
+.sidebar-link:hover {
+  color: var(--td-brand-color-hover) !important;
+}
+
+.nav-link.router-link-active {
+  border-bottom-color: var(--td-brand-color) !important;
+}
+
+.nav-link:hover {
+  border-bottom-color: var(--td-brand-color) !important;
+}
+
+.page-nav a {
+  color: var(--td-brand-color) !important;
+}
+
+.action-button {
+  background-color: var(--td-brand-color) !important;
+  border-color: var(--td-brand-color) !important;
+}
+
+.search-box input:focus {
+  border-color: var(--td-primary-btn-bg) !important;
+}
+
+button, .button {
+  background-color: var(--td-primary-btn-bg) !important;
+}
+/* 按需补充：搜索框高亮、代码块标记等 */

@@ -11,23 +11,21 @@ try {
   const changesetDir = path.join(repoRoot, '.changeset');
 
   // 获取本次 commit 的 staged 文件列表
-  const stagedFiles = execSync('git diff --name-only --cached', { encoding: 'utf-8' })
-    .split('\n')
-    .filter(Boolean);
+  const stagedFiles = execSync('git diff --name-only --cached', { encoding: 'utf-8' }).split('\n').filter(Boolean);
 
   // 判断是否为包源码变更（排除测试、文档等）
-  const isPackageSourceFile = (file) => {
+  const isPackageSourceFile = file => {
     if (!file.startsWith('packages/')) return false;
-    
+
     const ignorePatterns = [
       /\/(__tests__|__mocks__|test|tests|cypress|e2e)\//i,
       /\.(test|spec|cy)\.(js|ts|jsx|tsx|vue)$/i,
       /\/(stories|story)\.(js|ts|jsx|tsx|mdx)$/i,
       /\/docs\//i,
       /\.mdx?$/i,
-      /\.snap$/i,
+      /\.snap$/i
     ];
-    
+
     return !ignorePatterns.some(pattern => pattern.test(file));
   };
 
@@ -47,8 +45,7 @@ try {
   }
 
   // 2：只读取一次 changeset 文件
-  const changesetFiles = fs.readdirSync(changesetDir)
-    .filter(file => file.endsWith('.md') && file !== 'pre.json');
+  const changesetFiles = fs.readdirSync(changesetDir).filter(file => file.endsWith('.md') && file !== 'pre.json');
 
   if (changesetFiles.length === 0) {
     console.error('❌ 检测到 packages/ 变更，但未找到 .changeset/*.md 文件！');
@@ -57,8 +54,9 @@ try {
   }
 
   // 3：从 stagedFiles 中过滤出 .changeset/*.md
-  const stagedChangesetFiles = stagedFiles
-    .filter(file => file.startsWith('.changeset/') && file.endsWith('.md') && !file.endsWith('pre.json'));
+  const stagedChangesetFiles = stagedFiles.filter(
+    file => file.startsWith('.changeset/') && file.endsWith('.md') && !file.endsWith('pre.json')
+  );
 
   if (stagedChangesetFiles.length === 0) {
     console.error('❌ .changeset/*.md 文件未被 git add！');

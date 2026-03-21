@@ -82,7 +82,7 @@ jobs:
       #     title: 'chore(release): publish packages'
       #   env:
       #     # 用于 GitHub Releases API
-      #     GITHUB_TOKEN: ${{ secrets.CI_GITHUB_TOKEN }}  
+      #     GITHUB_TOKEN: ${{ secrets.CI_GITHUB_TOKEN }}
       #     # NPM 令牌，用于发布到 npmjs.com， 定期更新
       #     NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
       # END：release PR 模式： changeset自动提 PR → 人工合并 → 自动发布
@@ -102,7 +102,7 @@ jobs:
           # 4. 推送 changelog commit + tags
           git push origin main --follow-tags 
           # 5. 发布到 npm
-          pnpm exec changeset publish       
+          pnpm exec changeset publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.CI_GITHUB_TOKEN }}

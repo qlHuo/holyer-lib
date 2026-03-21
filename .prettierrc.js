@@ -19,5 +19,5 @@ module.exports = {
   // 只有一个参数的箭头函数的参数是否带圆括号（默认avoid:添加括号）
   arrowParens: 'avoid',
   // 行尾换行符
-  endOfLine: 'auto'
+  endOfLine: 'lf'
 };

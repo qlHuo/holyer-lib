@@ -1,0 +1,23 @@
+# .editorconfig
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+[*.md]
+insert_final_newline = false
+trim_trailing_whitespace = false
+
+[*.{js,jsx,ts,tsx,vue,css,less,scss,sass,html,json,yml,yaml,toml,xml,config.js,config.ts,env}]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+[*.sh]
+end_of_line = lf
+
+# VS Code 用户：安装 EditorConfig 插件（官方推荐）

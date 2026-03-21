@@ -1,0 +1,47 @@
+# .gitattributes - 放在项目根目录
+# 强制所有文本文件使用 LF，禁止 CRLF 污染仓库
+
+# 标准化所有文本文件
+* text=auto eol=lf
+
+# 显式声明关键文件类型（增强可靠性）
+*.js text eol=lf
+*.jsx text eol=lf
+*.ts text eol=lf
+*.tsx text eol=lf
+*.vue text eol=lf
+*.json text eol=lf
+*.css text eol=lf
+*.less text eol=lf
+*.scss text eol=lf
+*.sass text eol=lf
+*.html text eol=lf
+*.md text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.toml text eol=lf
+*.xml text eol=lf
+*.config.js text eol=lf
+*.env text eol=lf
+*.gitignore text eol=lf
+*.editorconfig text eol=lf
+*.sh text eol=lf
+
+# 二进制文件明确声明（避免误处理）
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.woff binary
+*.woff2 binary
+*.ttf binary
+*.eot binary
+*.otf binary
+*.pdf binary
+*.zip binary
+# 注意：若项目中是纯文本 SVG，可改为 `text eol=lf`
+*.svg binary
+
+# 强制规范化（关键！）
+*.{js,jsx,ts,tsx,vue,json,css,less,scss,html,md,yml,yaml} text eol=lf
