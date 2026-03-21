@@ -1,5 +1,11 @@
 # @holyer-lib/utils
 
+## 0.1.0
+
+### Minor Changes
+
+- 46da470: chore: 统一文本换行符标准
+
 ## 0.0.8
 
 ### Patch Changes

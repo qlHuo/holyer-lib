@@ -1,6 +1,6 @@
 {
   "name": "@holyer-lib/expand-text",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "main": "dist/expand-text.cjs.js",
   "module": "dist/expand-text.esm.js",
   "unpkg": "dist/expand-text.umd.js",
