@@ -22,20 +22,20 @@ jobs:
           token: ${{ secrets.CI_GITHUB_TOKEN }}
 
       # 设置 PNPM 和 Node.js 环境 注意和开发环境版本保持一致，否则可能导致依赖问题
-      - name: Setup PNPM
-        uses: pnpm/action-setup@v3
-        with:
-          version: 10.15.0
-
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 18.12.0
+          node-version: 18
           registry-url: 'https://registry.npmjs.org'
           cache: 'pnpm'
         env:
           # 用于 npm 登录（兼容部分工具链）
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Setup PNPM
+        uses: pnpm/action-setup@v3
+        with:
+          version: 10.15.0
 
       - name: Install Dependencies
         run: pnpm install --frozen-lockfile
@@ -92,15 +92,15 @@ jobs:
         if: steps.check_changesets.outputs.has_changesets == 'true'
         run: |
           # 1. 生成 changelog + 升级版本
-          pnpm exec changeset version  
+          pnpm exec changeset version
           # 2. 用新版本构建（可选但推荐）
           pnpm run build:all
           # 3. 添加到暂存区并提交
-          git add .                   
+          git add .
           # lint-staged 会阻止 CI 提交，这里跳过钩子
-          git commit --no-verify  -m "chore(release): version packages"  
+          git commit --no-verify  -m "chore(release): version packages"
           # 4. 推送 changelog commit + tags
-          git push origin main --follow-tags 
+          git push origin main --follow-tags
           # 5. 发布到 npm
           pnpm exec changeset publish
         env:
