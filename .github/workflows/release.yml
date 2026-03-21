@@ -4,6 +4,11 @@ name: Release
 on:
   push:
     branches: [main]
+    paths:
+      - 'packages/**'
+      - 'package.json'
+      - 'pnpm-lock.*'
+      - '.github/workflows/release.yml'
 
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 

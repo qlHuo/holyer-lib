@@ -2,7 +2,12 @@ name: Deploy Docs to GitHub Pages
 
 on:
   push:
-    branches: [main] # 或者你指定的分支
+    branches: [main]
+    paths:
+      - 'docs/**'
+      - 'docs/.vuepress/**'
+      - '.github/workflows/docs.yml'
+
   workflow_dispatch:
 
 # 关键：确保有正确的权限
@@ -68,4 +73,4 @@ jobs:
       # 9. （可选）打印部署 URL
       - name: Show deployment URL
         run: |
-          echo "✅ Docs deployed to: https://${{ github.repository }}.github.io/"
+          echo "✅ Docs deployed to: https://qlhuo.github.io/holyer-lib"
