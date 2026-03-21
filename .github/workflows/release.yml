@@ -4,6 +4,13 @@ name: Release
 on:
   push:
     branches: [main]
+  # 可选：仅当 docs/ 或 .vuepress/ 目录变更时触发
+    paths:
+      - 'packages/**'
+      - 'package.json'
+      - 'pnpm-lock.yaml'
+      - '.github/workflows/release.yml'
+
 
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
@@ -35,7 +42,7 @@ jobs:
       - name: Setup PNPM
         uses: pnpm/action-setup@v3
         with:
-          version: 10.15.0
+          version: 8.15.0
 
       - name: Install Dependencies
         run: pnpm install --frozen-lockfile
