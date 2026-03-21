@@ -30,6 +30,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      # 3. 安装 pnpm
+      - name: Setup PNPM
+        uses: pnpm/action-setup@v4
+        with:
+          version: '8.15.0'
+
       # 2. 设置 Node.js 环境
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -37,11 +43,6 @@ jobs:
           node-version: '18'
           cache: 'pnpm'
 
-      # 3. 安装 pnpm
-      - name: Setup PNPM
-        uses: pnpm/action-setup@v4
-        with:
-          version: '8.15.0'
 
       # 4. 安装依赖（含 Monorepo）
       - name: Install dependencies
