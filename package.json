@@ -18,8 +18,8 @@
     "prepare": "husky",
     "lint": "eslint packages --ext .js,.vue",
     "lint:fix": "eslint packages --ext .js,.vue --fix",
-    "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs"
+    "docs:dev": "pnpm build:all && vuepress dev docs",
+    "docs:build": "pnpm build:all && vuepress build docs"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.12.16",
