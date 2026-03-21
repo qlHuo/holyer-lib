@@ -9,5 +9,8 @@
   ],
   "publishConfig": {
     "access": "public"
+  },
+  "dependencies": {
+    "@holyer-lib/utils": "workspace:*"
   }
 }
