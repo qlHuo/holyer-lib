@@ -14,12 +14,13 @@ module.exports = {
     logo: '/logo.png',
     nav: [
       { text: '首页', link: '/' },
-      { text: '文档', link: '/guide/' }
+      { text: '文档', link: '/views/guide/' },
+      { text: '开发流程', link: '/views/develop/' },
     ],
     sidebar: {
-      '/guide/': [
+      '/views/guide/': [
         {
-          title: '开发指南',
+          title: '使用指南',
           collapsable: false,
           children: [
             ''
@@ -36,7 +37,16 @@ module.exports = {
             'virtual-list'
           ]
         }
-      ]
+      ],
+      '/views/develop/': [
+        {
+          title: '开发流程',
+          collapsable: false,
+          children: [
+            '',
+          ]
+        }
+      ],
     },
     lastUpdated: 'Last Updated',
     smoothScroll: true
