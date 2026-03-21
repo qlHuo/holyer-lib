@@ -1,5 +1,11 @@
 # @holyer-lib/card-list
 
+## 1.1.1
+
+### Patch Changes
+
+- d1378b2: fix: 添加 holyer-lib/utils 依赖包
+
 ## 1.1.0
 
 ### Minor Changes
