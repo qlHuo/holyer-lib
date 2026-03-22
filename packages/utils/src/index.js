@@ -2,3 +2,4 @@
 export * from './type';
 export * from './dom';
 export * from './tools';
+export * from './array';
