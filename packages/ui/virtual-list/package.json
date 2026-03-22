@@ -1,6 +1,6 @@
 {
   "name": "@holyer-lib/virtual-list",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A virtual-list component for Vue2",
   "main": "dist/virtual-list.cjs.js",
   "module": "dist/virtual-list.esm.js",

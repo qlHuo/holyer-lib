@@ -1,5 +1,11 @@
 # @holyer-lib/utils
 
+## 0.1.1
+
+### Patch Changes
+
+- c5fd9c4: feat: utils 工具函数更新
+
 ## 0.1.0
 
 ### Minor Changes

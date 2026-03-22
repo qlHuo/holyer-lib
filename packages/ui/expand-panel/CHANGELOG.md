@@ -1,5 +1,12 @@
 # @holyer-lib/expand-panel
 
+## 1.1.1
+
+### Patch Changes
+
+- Updated dependencies [c5fd9c4]
+  - @holyer-lib/utils@0.1.1
+
 ## 1.1.0
 
 ### Minor Changes
