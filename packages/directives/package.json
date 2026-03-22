@@ -1,0 +1,11 @@
+{
+  "name": "@holyer-lib/directives",
+  "version": "0.0.1",
+  "main": "index.js",
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@holyer-lib/utils": "workspace:*"
+  }
+}

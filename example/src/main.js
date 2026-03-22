@@ -3,6 +3,7 @@ import App from './App.vue';
 import router from './router';
 import '@holyer-lib/styles';
 import { HiCardList, HiCardItem, HiExpandPanel, HiExpandText, HiTitle, HiVirtualList } from '@holyer-lib/ui';
+import directives from '@holyer-lib/directives';
 
 Vue.component('HiCardList', HiCardList);
 Vue.component('HiCardItem', HiCardItem);
@@ -10,6 +11,8 @@ Vue.component('HiExpandPanel', HiExpandPanel);
 Vue.component('HiExpandText', HiExpandText);
 Vue.component('HiTitle', HiTitle);
 Vue.component('HiVirtualList', HiVirtualList);
+
+Vue.use(directives);
 
 Vue.config.productionTip = false;
 
