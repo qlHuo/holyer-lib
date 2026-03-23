@@ -2,7 +2,7 @@
 home: true
 heroImage: /logo.png
 actionText: "快速上手 →"
-actionLink: /guide/
+actionLink: /views/guide/
 features: 
   - title: "基础组件"
     details: "开箱即用的 Vue 2.6 组件，如卡片列表、侧边展开等，支持按需引入。"

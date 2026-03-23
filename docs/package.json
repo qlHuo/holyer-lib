@@ -1,6 +1,7 @@
 {
   "name": "docs",
   "version": "1.0.0",
+  "private": true,
   "description": "Documentation for holyer-lib",
   "scripts": {
     "dev": "cross-env NODE_OPTIONS=--openssl-legacy-provider vuepress dev .",
