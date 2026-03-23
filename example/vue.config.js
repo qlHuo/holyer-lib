@@ -1,5 +1,15 @@
-const { defineConfig } = require('@vue/cli-service');
-module.exports = defineConfig({
-  transpileDependencies: true,
-  lintOnSave: true
-});
+module.exports = {
+  devServer: {
+    port: 8080
+  },
+  lintOnSave: true,
+  css: {
+    loaderOptions: {
+      less: {
+        lessOptions: {
+          javascriptEnabled: true
+        }
+      }
+    }
+  }
+};

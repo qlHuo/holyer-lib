@@ -1,5 +1,5 @@
 <template>
-  <div class="holyer-lib-view">
+  <div class="holyer-lib-view" v-waterMark="{ text: 'HOLYER-LIB', fontSize: 16 }" v-resize="handleResize">
     <HiTitle content="HOLYER-LIB 组件说明" size="large" />
 
     <HiTitle class="mt-16" content="01. title组件" size="medium" />
@@ -152,6 +152,10 @@ export default {
 
     handleDragEnd(data) {
       console.log('拖拽结束，新的尺寸:', data);
+    },
+
+    handleResize() {
+      console.log('handleResize');
     }
   }
 };
