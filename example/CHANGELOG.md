@@ -1,5 +1,12 @@
 # example
 
+## 0.1.8
+
+### Patch Changes
+
+- Updated dependencies [deda4bb]
+  - @holyer-lib/styles@0.1.1
+
 ## 0.1.7
 
 ### Patch Changes
