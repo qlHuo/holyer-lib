@@ -1,5 +1,11 @@
 # @holyer-lib/directives
 
+## 0.1.1
+
+### Patch Changes
+
+- 4fdf3f2: feat: watermark 指令名称变更
+
 ## 0.1.0
 
 ### Minor Changes

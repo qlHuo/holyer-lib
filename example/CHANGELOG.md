@@ -1,5 +1,12 @@
 # example
 
+## 0.1.9
+
+### Patch Changes
+
+- Updated dependencies [4fdf3f2]
+  - @holyer-lib/directives@0.1.1
+
 ## 0.1.8
 
 ### Patch Changes
