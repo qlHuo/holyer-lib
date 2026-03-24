@@ -24,7 +24,7 @@
         </div>
       </HiExpandPanel>
     </div>
-  <ClientOnly>
+  </ClientOnly>
 </template>
 
 <script>

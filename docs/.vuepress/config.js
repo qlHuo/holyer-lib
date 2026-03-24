@@ -36,6 +36,15 @@ module.exports = {
             'title',
             'virtual-list'
           ]
+        },
+        {
+          title: '指令',
+          collapsable: false,
+          children: [
+            'watermark',
+            'copy',
+            'resize',
+          ]
         }
       ],
       '/views/develop/': [
