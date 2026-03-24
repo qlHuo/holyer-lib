@@ -1,5 +1,11 @@
 # @holyer-lib/directives
 
+## 0.1.2
+
+### Patch Changes
+
+- 57422c6: fix: watermark 指令文件名更新
+
 ## 0.1.1
 
 ### Patch Changes
