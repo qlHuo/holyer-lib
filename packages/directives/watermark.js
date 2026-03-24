@@ -150,7 +150,7 @@ function setupWatermark(el, binding) {
           container.removeChild(node);
         }
       } catch (e) {
-        // ignore
+        console.error('销毁水印时出错', e);
       } finally {
         delete el._watermark;
       }
