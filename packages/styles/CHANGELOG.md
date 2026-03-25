@@ -1,5 +1,11 @@
 # @holyer-lib/styles
 
+## 0.2.0
+
+### Minor Changes
+
+- 1ee7db6: styles: 全局样式优化，将 less 文件改成 css 文件
+
 ## 0.1.1
 
 ### Patch Changes

@@ -1,5 +1,12 @@
 # example
 
+## 0.1.11
+
+### Patch Changes
+
+- Updated dependencies [1ee7db6]
+  - @holyer-lib/styles@0.2.0
+
 ## 0.1.10
 
 ### Patch Changes
