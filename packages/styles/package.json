@@ -2,7 +2,7 @@
   "name": "@holyer-lib/styles",
   "version": "0.1.1",
   "description": "",
-  "main": "index.less",
+  "main": "index.css",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

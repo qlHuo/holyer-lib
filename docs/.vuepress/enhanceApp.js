@@ -1,4 +1,4 @@
-import '@holyer-lib/styles/index.less';
+import '@holyer-lib/styles';
 import HiUI from '@holyer-lib/ui';
 import directives from '@holyer-lib/directives';
 

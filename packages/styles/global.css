@@ -1,3 +1,4 @@
+/* global.css */
 body {
   margin: 0;
   padding: 0;
@@ -17,8 +18,8 @@ body {
   white-space: nowrap;
 }
 
-// 间距工具类
-// Padding
+/* 间距工具类 */
+/* Padding */
 .p-0 {
   padding: 0;
 }
@@ -144,7 +145,7 @@ body {
   padding-left: 40px;
 }
 
-// Margin
+/* Margin */
 .m-0 {
   margin: 0px;
 }
@@ -270,7 +271,7 @@ body {
   margin-left: 40px;
 }
 
-// 滚动条样式
+/* 滚动条样式 */
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
@@ -289,7 +290,7 @@ body {
   }
 }
 
-// 深色模式下的滚动条
+/* 深色模式下的滚动条 */
 .dark {
   ::-webkit-scrollbar-thumb {
     background: rgba(255, 255, 255, 0.1);
@@ -300,7 +301,7 @@ body {
   }
 }
 
-// Firefox 滚动条样式
+/* Firefox 滚动条样式 */
 * {
   scrollbar-width: thin;
   scrollbar-color: rgba(0, 0, 0, 0.1) transparent;

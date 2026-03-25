@@ -55,6 +55,13 @@ module.exports = {
             'tools',
             'type'
           ]
+        },
+        {
+          title: '公共样式',
+          collapsable: false,
+          children: [
+            'styles',
+          ]
         }
       ],
       '/views/develop/': [

@@ -1,0 +1,89 @@
+/* flex.css */
+/* 启用 Flex 布局（默认主轴为水平方向） */
+.flex {
+  display: flex;
+}
+
+/* 子元素自动伸缩，占据剩余可用空间 */
+.flex-1 {
+  flex: 1;
+}
+
+/* 垂直居中对齐（交叉轴居中） */
+.flex-middle {
+  display: flex;
+  align-items: center;
+}
+
+/* 水平垂直完全居中 */
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 主轴两端对齐：首尾子元素贴边，中间均匀分布 */
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* 主轴末尾对齐（如靠右或靠下） */
+.flex-end {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* 主轴起始对齐（默认行为，显式提供以增强可读性） */
+.flex-start {
+  display: flex;
+  justify-content: flex-start;
+}
+
+/* 改变主轴方向为垂直（子元素纵向排列） */
+.flex-column {
+  flex-direction: column;
+}
+
+/* 换行 */
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+/* 交叉轴对齐 */
+.flex-top {
+  display: flex;
+  align-items: flex-start;
+}
+.flex-bottom {
+  display: flex;
+  align-items: flex-end;
+}
+.flex-stretch {
+  display: flex;
+  align-items: stretch;
+}
+
+/* 主轴对齐补充 */
+.flex-around {
+  display: flex;
+  justify-content: space-around;
+}
+.flex-evenly {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+/* 单项对齐 */
+.self-start {
+  align-self: flex-start;
+}
+.self-center {
+  align-self: center;
+}
+.self-end {
+  align-self: flex-end;
+}
+.self-stretch {
+  align-self: stretch;
+}
