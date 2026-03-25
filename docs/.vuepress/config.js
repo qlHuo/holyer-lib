@@ -2,7 +2,7 @@
 const path = require('path');
 
 module.exports = {
-  title: 'holyer-lib',
+  title: 'HOLYER-LIB',
   description: '开箱即用的Vue@2.6组件库，支持单包引入',
   base: process.env.NODE_ENV === 'production' ? '/holyer-lib/' : '/',
   // base: process.env.NODE_ENV === 'production' ? '/holyer-lib/' : '/',
@@ -44,6 +44,16 @@ module.exports = {
             'watermark',
             'copy',
             'resize',
+          ]
+        },
+        {
+          title: '工具函数',
+          collapsable: false,
+          children: [
+            'array',
+            'dom',
+            'tools',
+            'type'
           ]
         }
       ],
