@@ -1,5 +1,5 @@
-changeset（通常指 Changesets）是专为 monorepo（多包仓库） 设计的版本管理和自动化发布工具。它通过声明式变更文件解决多包协同开发中的版本、依赖和发布难题。
-下面为你提供一份 全面、结构清晰、实战导向 的 Changesets 用法详解。
+# changeset 详解
+
 ## 一、核心概念
 ### 1. 什么是 Changeset？
 一个 YAML + Markdown 格式的文件，存放在 .changeset/ 目录下
@@ -17,7 +17,7 @@ feat(button): add loading state
 ```
 
 ### 2. 核心工作流
-![alt text](image.png)
+![核心工作流](https://raw.githubusercontent.com/qlHuo/images/main/imgs/20260329140356705.png)
 
 ## 二、安装与初始化
 ### 1. 安装 CLI
@@ -62,7 +62,7 @@ npx changeset init
 
 
 
-## 三、核心命令详解
+## 三、核心命令
 ### 1. npx changeset —— 创建变更声明（最常用）
 > 交互式创建 .changeset/*.md 文件
 
@@ -180,7 +180,7 @@ pnpm add -D @changesets/changelog-git
 ```
 
 
-## 六、常见问题与最佳实践
+## 六、常见问题
 ### ❓ Q1: 什么时候该用 patch / minor / major？
 | 类型 | 场景 |
 |------|------|
@@ -213,7 +213,7 @@ pnpm add -D @changesets/changelog-git
 * 合并到 main 并发布
 * （可选）cherry-pick 到其他稳定分支
 
-## 七、与其他工具对比
+## 七、对比其他工具
 | 工具 | 优点 | 缺点 |
 |------|------|------|
 | Changesets | 声明式、Git 友好、社区标准 | 学习成本略高 |
@@ -223,7 +223,7 @@ pnpm add -D @changesets/changelog-git
 
 > ✅ 现代 monorepo（pnpm/yarn）首选 Changesets
 
-## 八、总结：Changesets 核心价值
+## 八、总结
 | 能力 | 说明 |
 |------|------|
 | 声明式变更 | 用 Git 文件记录“谁要升什么级” |

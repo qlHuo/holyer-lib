@@ -70,6 +70,22 @@ module.exports = {
           collapsable: false,
           children: [
             '',
+            '01.environment',
+            '02.workspace',
+            '03.development',
+            '04.testing.md',
+            '05.code-quality',
+            '06.release'
+          ]
+        },
+        {
+          title: '其他',
+          collapsable: false,
+          children: [
+            'others/changeset',
+            'others/pnpm',
+            'others/git',
+            'others/vue2-code-quality',
           ]
         }
       ],
